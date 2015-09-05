@@ -43,6 +43,8 @@ if ops.secret
   config.secret = ops.secret
 if ops.name
   config.name = ops.name
+if ops.level
+  config.level = ops.level
 
 log = bunyan.createLogger({name: config.name, level: config.level})
 
