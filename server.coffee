@@ -22,6 +22,10 @@ ops = stdio.getopt({
     args: 1
     description: 'The name of this app to use for logging'
   }
+  'level': {
+    args: 1
+    description: 'The log level to use'
+  }
 })
 
 config = {
@@ -30,6 +34,7 @@ config = {
   name: 'GitHubWebHookDeploy'
   basePath: ''
   port: 3000
+  level: 'info'
 }
 
 if ops.cwd
@@ -39,7 +44,7 @@ if ops.secret
 if ops.name
   config.name = ops.name
 
-log = bunyan.createLogger({name: config.name})
+log = bunyan.createLogger({name: config.name, level: config.level})
 
 app = express()
 app.set('port', process.env.PORT || config.port || 3000)
