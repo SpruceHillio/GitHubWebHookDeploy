@@ -7,7 +7,7 @@
         "express": "~4.x",
         "body-parser" : "~1.0.0",
         "morgan" : "~1.0.0",
-        "bunyan" : "~1.2.2",
+        "bunyan" : "~1.4.1",
         "coffee" : "*",
         "coffee-script": "*",
         "stdio":"*"
